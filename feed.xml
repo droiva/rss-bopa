@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+   <channel>
+      <title>BOPA Asturias - Feed</title>
+      <link>https://miprincipado.asturias.es/bopa/ultimos-boletines?p_r_p_summaryLastBopa=true</link>
+      <description>Feed generado automáticamente</description>
+      <item>
+         <title>Sin novedades o error de lectura</title>
+         <description>El script no pudo recuperar los boletines hoy. Revisa los logs.</description>
+      </item>
+   </channel>
+</rss>
