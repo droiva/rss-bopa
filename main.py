@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
+import email.utils
 
 # URL OBJETIVO
 # URL OBJETIVO
@@ -114,10 +115,10 @@ def generar_rss():
     # --- CREACIÓN DEL XML ---
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
-    channel = ET.SubElement(rss, "channel")
     ET.SubElement(channel, "title").text = "BOPA Asturias & Uniovi Investigacion - Feed"
     ET.SubElement(channel, "link").text = "https://github.com/droiva/rss-bopa"
     ET.SubElement(channel, "description").text = "Feed generado automáticamente de las disposiciones del BOPA y convocatorias de investigación de Uniovi"
+    ET.SubElement(channel, "lastBuildDate").text = email.utils.formatdate(usegmt=True)
     
     if todos_enlaces:
         for titulo, url in todos_enlaces:
