@@ -5,7 +5,36 @@ import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
 # URL OBJETIVO
-URL = "https://miprincipado.asturias.es/bopa/ultimos-boletines?p_r_p_summaryLastBopa=true"
+# URL OBJETIVO
+URL_BOPA = "https://miprincipado.asturias.es/bopa/ultimos-boletines?p_r_p_summaryLastBopa=true"
+URL_UNIOVI = "https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas"
+
+def obtener_uniovi():
+    print("Iniciando descarga de Uniovi...")
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    }
+    
+    enlaces = []
+    try:
+        response = requests.get(URL_UNIOVI, headers=headers, timeout=30)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # Buscar enlaces con clase "card-title"
+        links = soup.find_all("a", class_="card-title")
+        print(f"Encontrados {len(links)} elementos en Uniovi.")
+        
+        for link in links:
+            titulo = link.get_text(strip=True)
+            href = link.get("href")
+            if href and titulo:
+                enlaces.append((f"[UNIOVI] {titulo}", href))
+                
+    except Exception as e:
+        print(f"Error obteniendo datos de Uniovi: {e}")
+        
+    return enlaces
 
 def generar_rss():
     print("Iniciando descarga con requests...")
@@ -15,7 +44,7 @@ def generar_rss():
     }
     
     try:
-        response = requests.get(URL, headers=headers, timeout=30)
+        response = requests.get(URL_BOPA, headers=headers, timeout=30)
         response.raise_for_status()
         content = response.text
         print("Página cargada. Longitud del contenido:", len(content))
@@ -73,17 +102,25 @@ def generar_rss():
     # Eliminar duplicados manteniendo el orden
     enlaces_bopa = list(dict.fromkeys(enlaces_bopa))
     
-    print(f"✅ Filtrados: Se encontraron {len(enlaces_bopa)} disposiciones válidas.")
+    print(f"✅ Filtrados: Se encontraron {len(enlaces_bopa)} disposiciones válidas en BOPA.")
+
+    # Obtener datos de Uniovi
+    enlaces_uniovi = obtener_uniovi()
+    print(f"✅ Filtrados: Se encontraron {len(enlaces_uniovi)} convocatorias válidas en Uniovi.")
+    
+    # Combinar enlaces
+    todos_enlaces = enlaces_bopa + enlaces_uniovi
 
     # --- CREACIÓN DEL XML ---
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
-    ET.SubElement(channel, "title").text = "BOPA Asturias - Feed"
-    ET.SubElement(channel, "link").text = URL
-    ET.SubElement(channel, "description").text = "Feed generado automáticamente de las disposiciones del BOPA"
+    channel = ET.SubElement(rss, "channel")
+    ET.SubElement(channel, "title").text = "BOPA Asturias & Uniovi Investigacion - Feed"
+    ET.SubElement(channel, "link").text = "https://github.com/droiva/rss-bopa"
+    ET.SubElement(channel, "description").text = "Feed generado automáticamente de las disposiciones del BOPA y convocatorias de investigación de Uniovi"
     
-    if enlaces_bopa:
-        for titulo, url in enlaces_bopa:
+    if todos_enlaces:
+        for titulo, url in todos_enlaces:
             if url.startswith("/"):
                 url = f"https://miprincipado.asturias.es{url}"
             

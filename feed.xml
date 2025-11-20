@@ -1,9 +1,10 @@
 <?xml version="1.0" ?>
 <rss version="2.0">
+   <channel/>
    <channel>
-      <title>BOPA Asturias - Feed</title>
-      <link>https://miprincipado.asturias.es/bopa/ultimos-boletines?p_r_p_summaryLastBopa=true</link>
-      <description>Feed generado automáticamente de las disposiciones del BOPA</description>
+      <title>BOPA Asturias &amp; Uniovi Investigacion - Feed</title>
+      <link>https://github.com/droiva/rss-bopa</link>
+      <description>Feed generado automáticamente de las disposiciones del BOPA y convocatorias de investigación de Uniovi</description>
       <item>
          <title>Resolución de 31 de octubre de 2025, de la Consejería de Presidencia, Reto Demográfico, Igualdad y Turismo, por la que se nombra personal funcionario de carrera en el proceso de estabilización de empleo temporal, por el sistema de concurso, en el Cuerpo de Veterinaria de la Administración del Principado de Asturias.[Cód. 2025-09221]</title>
          <link>https://miprincipado.asturias.es/bopa/2025/11/20/2025-09221.pdf</link>
@@ -193,6 +194,51 @@
          <title>Listado final del proceso 11/2025, de la convocatoria de contratación indefinida de un Auxiliar de Información y Gestión de Material Promocional de la Sociedad Publica de Gestión y Promoción Turística y Cultural del Principado de Asturias, S. A. U.[Cód. 2025-09399]</title>
          <link>https://miprincipado.asturias.es/bopa/2025/11/20/2025-09399.pdf</link>
          <guid>https://miprincipado.asturias.es/bopa/2025/11/20/2025-09399.pdf</guid>
+      </item>
+      <item>
+         <title>[UNIOVI] Convocatoria de Contratos Predoctorales para personal investigador en formación de la Universidad de Oviedo</title>
+         <link>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/11354781</link>
+         <guid>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/11354781</guid>
+      </item>
+      <item>
+         <title>[UNIOVI] Convocatoria pública, en régimen de concurrencia competitiva, de financiación de proyectos estratégicos de inteligencia artificial y ciberseguridad, en el marco del Convenio entre la Universidad de Oviedo e INCIBE</title>
+         <link>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/11987480</link>
+         <guid>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/11987480</guid>
+      </item>
+      <item>
+         <title>[UNIOVI] Convocatoria de contratos puente postdoctorales en la Universidad de Oviedo</title>
+         <link>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/11975504</link>
+         <guid>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/11975504</guid>
+      </item>
+      <item>
+         <title>[UNIOVI] Ayudas a Grupos de Investigación de la Universidad de Oviedo para el ejercicio 2025</title>
+         <link>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/11178392</link>
+         <guid>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/11178392</guid>
+      </item>
+      <item>
+         <title>[UNIOVI] Convocatoria Pública, en régimen de concurrencia competitiva, de Ayudas destinadas a financiar la difusión de resultados de la investigación, para el ejercicio 2025</title>
+         <link>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/11354702</link>
+         <guid>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/11354702</guid>
+      </item>
+      <item>
+         <title>[UNIOVI] Convocatoria de ayudas para la formación de personal investigador predoctoral contemplada en el Programa Estatal para impulsar la Investigación Científica-Técnica y su Transferencia, del Plan de Investigación Científica Técnica y de Innovación 2021-2023</title>
+         <link>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/12238596</link>
+         <guid>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/12238596</guid>
+      </item>
+      <item>
+         <title>[UNIOVI] Proyectos de Investigación Internacionales, en convocatorias públicas de I+D+I, para los ejercicios 2024 y 2025</title>
+         <link>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/8960583</link>
+         <guid>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/8960583</guid>
+      </item>
+      <item>
+         <title>[UNIOVI] Ayudas para contratos Juan de la Cierva 2025</title>
+         <link>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/12505890</link>
+         <guid>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/12505890</guid>
+      </item>
+      <item>
+         <title>[UNIOVI] Ayudas para contratos Ramón y Cajal (RYC) 2025</title>
+         <link>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/12505872</link>
+         <guid>https://www.uniovi.es/en/investiga/ayudas/convocatorias/todas/-/asset_publisher/ujKcPrR7dsyr/content/id/12505872</guid>
       </item>
    </channel>
 </rss>
