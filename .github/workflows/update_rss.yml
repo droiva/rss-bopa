@@ -1,0 +1,38 @@
+name: Actualizar RSS BOPA
+
+on:
+  schedule:
+    # Se ejecuta todos los días a las 7:00 AM UTC (8 o 9 AM hora España)
+    - cron: '0 7 * * *'
+  workflow_dispatch: # Permite ejecutarlo manualmente con un botón para probar
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v3
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Instalar dependencias
+      run: |
+        pip install -r requirements.txt
+
+    - name: Ejecutar script
+      run: python main.py
+
+    - name: Guardar cambios (commit)
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add feed.xml
+        # Solo hace commit si hay cambios (si hay nuevo boletín)
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Actualizar feed RSS" && git push)
